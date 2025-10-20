@@ -98,7 +98,7 @@ ___
 
     sudo dracut -f # or mkinitcpio -P
     ```
-+ **Security:** This method trades a bit of security for convenience. If an attacker can physically access your machine and modify the non-encrypted boot partition (but not the sealed PCRs), certain "Evil Maid" attacks might be possible.
++ **Security:** This method trades a bit of security for convenience. If an attacker can physically access your machine and modify the non-encrypted boot partition (but not the sealed PCRs), certain ["Evil Maid" attacks](https://en.wikipedia.org/wiki/Evil_maid_attack) might be possible.
     + Using a **TPM PIN** in addition to the PCRs can mitigate some of these risks. This can be done by using the flag `--tpm2-with-pin=yes` with the enrollment command.
        
        **Example:** 
