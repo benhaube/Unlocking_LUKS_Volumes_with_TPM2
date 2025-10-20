@@ -79,11 +79,11 @@ ___
                     ```
 4. Regenerate the initramfs.
    + The boot unlocking happens in the early boot stage **(initramfs/initrd)**, so you must rebuild it to include the new configuration and the necessary TPM modules.
-   + For **Fedora/RHEL/Arch** use `dracut` command:
+       + For **Fedora/RHEL/Arch** use `dracut` command:
            ```Bash
            sudo dracut -f
            ```   
-   + For **Debian/Ubuntu** systems use `mkinitcpio` command: 
+       + For **Debian/Ubuntu** systems use `mkinitcpio` command: 
            ```Bash
            sudo mkinitcpio -P
            ```
