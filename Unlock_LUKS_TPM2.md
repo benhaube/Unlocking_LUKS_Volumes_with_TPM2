@@ -32,7 +32,7 @@ ___
         sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+4+7+11 /dev/your_device
         ```
     + `--tpm2-device=auto`: Automatically detects the TPM2 device.
-    + `--tpm2-pcrs=0+1+7+11`: Specifies the **PCR**s to bind to.
+    + `--tpm2-pcrs=0+4+7+11`: Specifies the **PCR**s to bind to.
         + **PCR 0**: Core system firmware. *(UEFI/BIOS)*
         + **PCR 4**: Boot loader and additional drivers. *(Grub/shim)* 
         + **PCR 7**: The Secure Boot state. *(enabled/disabled, UEFI certificates)*
