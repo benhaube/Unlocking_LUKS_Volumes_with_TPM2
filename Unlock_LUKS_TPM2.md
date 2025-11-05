@@ -29,12 +29,14 @@ ___
     + If an attacker alters the boot chain, the **PCR** values change, and the key will not be released.
     + Run the enrollment command as **root**. Replace `/dev/your_device` with your actual device path. 
         ```Bash
-        sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/your_device
+        sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+1+7+11 /dev/your_device
         ```
     + `--tpm2-device=auto`: Automatically detects the TPM2 device.
-    + `--tpm2-pcrs=0+7`: Specifies the **PCR**s to bind to.
-        + **PCR 0** typically covers the firmware/BIOS.
-        + **PCR 7** covers the Secure Boot state.
+    + `--tpm2-pcrs=0+1+7+11`: Specifies the **PCR**s to bind to.
+        + **PCR 0**: Core system firmware. *(UEFI/BIOS)*
+        + **PCR 1**: Host platform configuration. *(hardware list, serial/model numbers)* 
+        + **PCR 7** The Secure Boot state. *(enabled/disabled, UEFI certificates)*
+        + **PCR 11**: Unified Kernel Image (UKI) components, kernel image, embedded initrd.
     + When prompted, enter an **existing passphrase** for your LUKS volume to authorize the new key slot.
 3. Configure `crypttab`
     + Edit the `/etc/crypttab` file to tell the boot process to use the TPM2 device. 
