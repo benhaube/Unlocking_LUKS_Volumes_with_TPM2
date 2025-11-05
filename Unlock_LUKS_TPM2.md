@@ -3,7 +3,6 @@
 Unlocking your LUKS volume with a Trusted Platform Module 2.0 (TPM2) provides a secure way to enable automatic decryption during boot, usually eliminating the need to type a passphrase unless the system state changes.
 
 The most common and recommended way to achieve this on modern Linux systems, especially those using LUKS2 and systemd, is by using the systemd-cryptenroll tool.
-___
 
 ## Prerequisites:
 1. **TPM2 Chip:** Your computer must have an active **TPM2** chip. Most modern hardware does, but you may need to enable in **UEFI** settings.  
