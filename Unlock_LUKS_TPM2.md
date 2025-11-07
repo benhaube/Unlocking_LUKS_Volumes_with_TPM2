@@ -105,6 +105,6 @@ The most common and recommended way to achieve this on modern Linux systems, esp
        
        **Example:** 
        ```Bash
-       sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 --tpm2-with-pin=yes /dev/your_device
+       sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+4+7+11 --tpm2-with-pin=yes /dev/your_device
        ```
     
