@@ -96,7 +96,7 @@ The most common and recommended way to achieve this on modern Linux systems, esp
     + To enroll a recovery key: `sudo systemd-cryptenroll --recovery-key /dev/your_device`
 + **Wiping the slot:** If you update your firmware, kernel, or bootloader and the automatic unlock stops working, you will need to use your backup passphrase and then wipe and re-enroll the TPM key. 
     ```Bash
-    sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto /dev/your_device
+    sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/your_device
 
     sudo dracut -f # or mkinitramfs or mkinitcpio -P
     ```
